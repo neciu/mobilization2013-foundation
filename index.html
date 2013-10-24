@@ -35,36 +35,365 @@
         <section>
             <h1>Podbudówka Foundation</h1>
 
-            <h3>HTML Presentations Made Easy</h3>
+            <h3>Tomasz Netczuk</h3>
+            <h4>Mobilization 3, 26 października 2013 r, Łódź</h4>
+        </section>
+
+        <section>
+            <h2>Foundation?</h2>
+
+            <blockquote cite="http://foundation.zurb.com/">
+                &bdquo;The most advanced responsive front-end framework in the world.&rdquo;
+            </blockquote>
+
+            <br>
+
+            <ul>
+                <li>HTML5</li>
+                <li>Sass</li>
+                <li>Zepto / jQuery</li>
+                <li>Mobile first</li>
+                <li>Resposive Web Design</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Foundation vs Bootstrap</h2>
+
+            <div>
+                <div style="width: 50%; float: left;">
+                    <ul style="list-style-type: none;">
+                        <li>Sass</li>
+                        <li>Zepto / jQuery</li>
+                        <li><s>IE 8</s></li>
+                        <li>Mobile first</li>
+                    </ul>
+                </div>
+                <div style="width: 50%; float: right">
+                    <ul style="list-style-type: none;">
+                        <li>LESS</li>
+                        <li>jQuery</li>
+                        <li>IE 8</li>
+                        <li>Mobile first (> 3.0)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>Oraz różnice w komponentach.</p>
+        </section>
+
+        <section>
+            <img src="img/sass-logo.png" style="width: 30%; border: none; box-shadow: none; background: none;">
+
+            <blockquote cite="http://sass-lang.com/">
+                &bdquo;Sass is the most mature, stable, and powerful professional grade CSS extension language in the
+                world.&rdquo;
+            </blockquote>
+            <br>
 
             <p>
-                Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a>
-                
+                <strong>CSS na sterydach</strong>: zmienne, zagnieżdzanie, zależności, <em>mixiny</em>, dziedziczenie i
+                obliczenia.
+            </p>
+
+            <aside class="notes">
+                Język kompilowany do CSSa. *.scss vs *.sass. Kompilujemy u siebie, potem wrzucamy na serwer, przez to
+                musimy pilnować 2x plików :<. Jest watcher. Wychwytuje, jak zmienimy coś w rodzicu.
+            </aside>
+        </section>
+
+        <section>
+            <img src="img/sass-logo.png" style="width: 30%; border: none; box-shadow: none; background: none;">
+            <p>cd. (zmienne, zagnieżdzanie i obliczenia)</p>
+
+            <div>
+                <div style="width: 50%; float: left;">
+                         <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+$news-color: #E83523;
+$base-font-size: 16px;
+
+.news {
+  background-color: $news-color;
+  font-size: $base-font-size;
+
+  .title {
+    color: darken($news-color, 50%);
+      font-size: $base-font-size *2;
+  }
+}
+                         </code></pre>
+                </div>
+                <div style="width: 50%; float: right;">
+                         <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+.news {
+    background-color: #e83523;
+    font-size: 16px;
+}
+
+.news .title {
+    color: #0b0201;
+    font-size: 32px;
+}
+                         </code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <img src="img/sass-logo.png" style="width: 30%; border: none; box-shadow: none; background: none;">
+            <p>cd. (<em>mixiny</em>)</p>
+            <div>
+                <div style="width: 50%; float: left;">
+                         <pre><code data-trim contenteditable style="font-size: 16px;">
+$news-box-shadow: 7px 7px 5px yellow;
+
+@mixin border-shadow($border-shadow) {
+  -webkit-box-shadow: $border-shadow;
+  -moz-box-shadow: $border-shadow;
+  box-shadow: $border-shadow;
+}
+
+.top-menu-item {
+  @include border-shadow($news-box-shadow);
+}
+
+.menu-item {
+  @include border-shadow($news-box-shadow);
+}
+                         </code></pre>
+                </div>
+                <div style="width: 50%; float: right;">
+                         <pre><code data-trim contenteditable style="font-size: 16px;">
+.top-menu-item {
+    -webkit-box-shadow: 7px 7px 5px yellow;
+    -moz-box-shadow: 7px 7px 5px yellow;
+    box-shadow: 7px 7px 5px yellow;
+}
+
+.menu-item {
+    -webkit-box-shadow: 7px 7px 5px yellow;
+    -moz-box-shadow: 7px 7px 5px yellow;
+    box-shadow: 7px 7px 5px yellow;
+}
+                         </code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <img src="img/sass-logo.png" style="width: 30%; border: none; box-shadow: none; background: none;">
+            <p>cd. (dziedziczenie)</p>
+            <div>
+                <div style="width: 50%; float: left;">
+                         <pre><code data-trim contenteditable style="font-size: 16px;">
+.menu-item {
+  display: block;
+}
+.main-menu-item {
+  @extend .menu-item;
+  width: 80%;
+}
+.top-menu-item {
+  @extend .menu-item;
+  height: 20px;
+}
+.news {
+  @extend .menu-item;
+  background-color: red;
+}
+                         </code></pre>
+                </div>
+                <div style="width: 50%; float: right;">
+                         <pre><code data-trim contenteditable style="font-size: 16px;">
+.menu-item, .main-menu-item, .top-menu-item,
+                             .news {
+    display: block;
+}
+.main-menu-item {
+    width: 80%;
+}
+.top-menu-item {
+    height: 20px;
+}
+.news {
+    background-color: red;
+}
+                         </code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <img src="img/zepto-logo.png" style="width: 40%; border: none; box-shadow: none; background: none;">
+
+            <blockquote cite="http://sass-lang.com/">
+                &bdquo;Zepto is a minimalist JavaScript library for modern browsers with a largely jQuery-compatible
+                API. If you use jQuery, you already know how to use Zepto.&rdquo;
+            </blockquote>
+
+            <aside class="notes">
+                Nie ma za specjalnie animacji, ale ludzie od foudation napisali trochę pluginów.
+            </aside>
+        </section>
+
+        <section>
+            <img src="img/zepto-logo.png" style="width: 40%; border: none; box-shadow: none; background: none;">
+
+            <p>
+                <img src="img/ie-troll.jpg">
+            </p>
+
+            <p>
+                zepto.min.js: <strong>26,5 KB</strong> vs jquery-2.0.3.min.js: <strong>81,6 KB</strong>
+            </p>
+
+            <aside class="notes">
+                Trzeba też pamiętać o tym, że czasem trzeba wrzucić dwie wersje jQuery dla starych IE => jeszcze więcej
+                haxów.
+            </aside>
+        </section>
+
+        <section>
+            <h2><em>Krata</em> (grid) w Foundation</h2>
+
+            <img src="img/foundation-grid-1.png">
+
+            <p>
+                Konfigurowalna z poziomu Sassa (jak wszystkie elementy Foundation).
             </p>
         </section>
 
-
         <section>
-            <h1>Test 2</h1>
+            <h2>Zagnieżdzanie kraty</h2>
 
-            <h3>HTML Presentations Made Easy</h3>
-
-            <p>
-                <small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a>
-                </small>
-            </p>
+            <img src="img/foundation-grid-2.png">
         </section>
 
+        <section>
+            <h2>Krata na mobilkach</h2>
+
+            <img src="img/foundation-grid-2.png">
+        </section>
 
         <section>
-            <h1>Test 3</h1>
+            <h2>Specjalne znaczniki dla małych ekranów</h2>
 
-            <h3>HTML Presentations Made Easy</h3>
+            <img src="img/foundation-grid-2.png">
+        </section>
 
-            <p>
-                <small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a>
-                </small>
-            </p>
+        <section>
+            <h2>Media queries</h2>
+
+             <pre><code data-trim contenteditable style="font-size: 16px;">
+$small-screen: em-calc(768);
+$medium-screen: em-calc(1280);
+$large-screen: em-calc(1440);
+
+$screen: "only screen";
+$small: "only screen and (min-width:"#{$small-screen}")";
+$medium: "only screen and (min-width:"#{$medium-screen}")";
+$large: "only screen and (min-width:"#{$large-screen}")";
+$landscape: "only screen and (orientation: landscape)";
+$portrait: "only screen and (orientation: portrait)";
+
+@media #{$screen} { ... }
+@media #{$small} { ... }
+@media #{$medium} { ... }
+@media #{$large} { ... }
+@media #{$landscape} { ... }
+@media #{$portrait} { ... }
+             </code></pre>
+        </section>
+
+        <section>
+            <h2>Klasy widoczności</h2>
+
+            <div>
+                <div style="width: 50%; float: left;">
+                         <pre><code data-trim contenteditable style="font-size: 16px;">
+.show-for-small
+.show-for-medium-down
+.show-for-medium
+.show-for-medium-up
+.show-for-large-down
+.show-for-large
+.show-for-large-up
+.show-for-xlarge
+
+.hide-for-small
+.hide-for-medium-down
+.hide-for-medium
+.hide-for-medium-up
+.hide-for-large-down
+.hide-for-large
+.hide-for-large-up
+.hide-for-xlarge
+                         </code></pre>
+                </div>
+                <div style="width: 50%; float: right;">
+                         <pre><code data-trim contenteditable style="font-size: 16px;">
+.show-for-landscape
+.show-for-portrait
+.hide-for-landscape
+.hide-for-portrait
+
+.show-for-touch
+.hide-for-touch
+                         </code></pre>
+                    Przykładowe użycie w Sassie:
+                        <pre><code data-trim contenteditable style="font-size: 16px;">
+.your-class-name {
+  @extend .hide-for-small;
+}
+                         </code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Moduły Javascript w Foundation</h2>
+
+            <br>
+
+            <ul>
+                <li>Abide (sprawdzanie formularzy)</li>
+                <li>Clearing (galeria)</li>
+                <li>Interchange (dynamiczne doładowywanie odpowiednich rozmiarów obrazków)</li>
+                <li>Joyride (przejażdzka po serwisie)</li>
+                <li>I inne...</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Inne <em>standardowe</em> elementy Foundation</h2>
+
+            <ul>
+                <li>Przyciski</li>
+                <li>Nawigacja</li>
+                <li>Typografia</li>
+                <li>Formularze</li>
+                <li>Gotowe widoki dla powiadomień, ekranów modalnych, itd...</li>
+                <li>I inne...</li>
+            </ul>
+            <hr>
+            Czyli mamy (niemal) wszystko co potrzeba do szybkiego zbudowania strony z klocków.
+
+            <aside class="notes">
+                Jeśli jest czas, to możemy pokazać: interchange, jak się zmienia strona mce, visibility classes na niej,
+                zmianę lejałtu dla speakerów.
+            </aside>
+        </section>
+
+        <section>
+            <h1>Koniec</h1>
+
+            <h2>Pytania?</h2>
+
+            <br>
+
+            <h3>Tomasz Netczuk</h3>
+
+            <h4><a href="mailto:contact@netczuk.pl">contact@netczuk.pl</a>, <a href="https://twitter.com/netczuk" target="_blank">@netczuk</a></h4>
         </section>
     </div>
 </div>

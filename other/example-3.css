@@ -1,0 +1,12 @@
+.menu-item, .main-menu-item, .top-menu-item, .news {
+    display: block;
+}
+.main-menu-item {
+    width: 80%;
+}
+.top-menu-item {
+    height: 20px;
+}
+.news {
+    background-color: red;
+}

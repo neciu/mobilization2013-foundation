@@ -1,0 +1,11 @@
+.top-menu-item {
+    -webkit-box-shadow: 7px 7px 5px yellow;
+    -moz-box-shadow: 7px 7px 5px yellow;
+    box-shadow: 7px 7px 5px yellow;
+}
+
+.menu-item {
+    -webkit-box-shadow: 7px 7px 5px yellow;
+    -moz-box-shadow: 7px 7px 5px yellow;
+    box-shadow: 7px 7px 5px yellow;
+}

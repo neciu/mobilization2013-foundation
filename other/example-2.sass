@@ -1,0 +1,25 @@
+$news-box-shadow: 7px 7px 5px yellow;
+
+@mixin border-shadow($border-shadow) {
+  -webkit-box-shadow: $border-shadow;
+  -moz-box-shadow: $border-shadow;
+  box-shadow: $border-shadow;
+}
+
+.top-menu-item {
+  @include border-shadow($news-box-shadow);
+}
+
+.menu-item {
+  @include border-shadow($news-box-shadow);
+}
+
+//.news {
+//  @extend .menu-item;
+//  background-color: red;
+//}
+//
+//.story {
+//  @extend .menu-item;
+//  background-color: green;
+//}

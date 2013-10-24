@@ -1,0 +1,9 @@
+.news {
+    background-color: #e83523;
+    font-size: 16px;
+}
+
+.news .title {
+    color: #0b0201;
+    font-size: 32px;
+}
