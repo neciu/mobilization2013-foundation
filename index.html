@@ -258,27 +258,78 @@ $news-box-shadow: 7px 7px 5px yellow;
 
             <img src="img/foundation-grid-1.png">
 
-            <p>
-                Konfigurowalna z poziomu Sassa (jak wszystkie elementy Foundation).
-            </p>
+            <ul>
+                <li>12 kolumn.</li>
+                <li>Konfigurowalna z poziomu Sassa (jak wszystkie elementy Foundation).</li>
+            </ul>
         </section>
 
         <section>
             <h2>Zagnieżdzanie kraty</h2>
 
             <img src="img/foundation-grid-2.png">
+
+            <ul>
+                <li>Kolumny w zagnieżdzonych kratach sumują się do 12.</li>
+                <li>Zawsze ten sam odstęp pomiędzy kolumnami.</li>
+            </ul>
+
         </section>
 
         <section>
             <h2>Krata na mobilkach</h2>
 
-            <img src="img/foundation-grid-2.png">
+            <div style="display: inline-block;">
+                <div style="width: 50%; float: left;">
+                    <img src="img/foundation-grid-1.png">
+
+                    <p>
+                        <small>
+                            Standardowa krata przeniesiona na mobilki będzie wyglądała tak: ►
+                        </small>
+                    </p>
+                </div>
+                <div style="width: 50%; float: right;">
+                    <img src="img/foundation-grid-3.png">
+                </div>
+            </div>
+
+            <p>
+                Możemy to poprawić używając odpowiednich znaczników...
+            </p>
+
+            <aside class="notes">
+                Bootstrap 2 miał tylko taką opcję. 3 dodała w końcu możliwość układania layoutu dla mobilek.
+            </aside>
         </section>
 
         <section>
             <h2>Specjalne znaczniki dla małych ekranów</h2>
 
-            <img src="img/foundation-grid-2.png">
+            <div style="display: inline-block;">
+                <div style="width: 60%; float: left;">
+                         <pre><code data-trim contenteditable style="font-size: 16px;">
+<div class="row">
+    <div class="large-12 columns">12 kolumn</div>
+</div>
+<div class="row">
+    <div class="large-8 columns">8 kolumn</div>
+    <div class="large-3 columns">3 kolumny</div>
+</div>
+<div class="row">
+    <div class="large-1 small-6 columns">1</div>
+    <div class="large-2 small-6 columns">2</div>
+    <div class="large-3 small-3 columns">3</div>
+    <div class="large-4 small-4 columns">4</div>
+</div>
+                         </code></pre>
+                </div>
+                <div style="width: 40%; float: right;">
+                    <img src="img/foundation-grid-3.png">
+                    ▼
+                    <img src="img/foundation-grid-4.png">
+                </div>
+            </div>
         </section>
 
         <section>
@@ -373,10 +424,22 @@ $portrait: "only screen and (orientation: portrait)";
                 <li>Typografia</li>
                 <li>Formularze</li>
                 <li>Gotowe widoki dla powiadomień, ekranów modalnych, itd...</li>
+                <li><strong>RTL</strong></li>
                 <li>I inne...</li>
             </ul>
             <hr>
             Czyli mamy (niemal) wszystko co potrzeba do szybkiego zbudowania strony z klocków.
+
+            <aside class="notes">
+                Jeśli jest czas, to możemy pokazać: interchange, jak się zmienia strona mce, visibility classes na niej,
+                zmianę lejałtu dla speakerów.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Foundation vs Bootstrap</h2>
+
+            <h3>Co lepsze? To zależy...</h3>
 
             <aside class="notes">
                 Jeśli jest czas, to możemy pokazać: interchange, jak się zmienia strona mce, visibility classes na niej,
