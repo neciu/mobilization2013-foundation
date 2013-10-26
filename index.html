@@ -233,6 +233,12 @@ $news-box-shadow: 7px 7px 5px yellow;
 
             <aside class="notes">
                 Nie ma za specjalnie animacji, ale ludzie od foudation napisali trochę pluginów.
+                <br>
+                While 100% jQuery coverage is not a design goal, the APIs provided match their jQuery counterparts. The
+                goal is to have a ~5-10k modular library that downloads and executes fast, with a familiar and versatile
+                API, so you can concentrate on getting stuff done.
+
+                Zepto is open source software and is released under the developer and business-friendly MIT license.
             </aside>
         </section>
 
@@ -354,6 +360,10 @@ $portrait: "only screen and (orientation: portrait)";
 @media #{$landscape} { ... }
 @media #{$portrait} { ... }
              </code></pre>
+
+            <aside class="notes">
+                Media queries też psują IE :<. Aby były dobrze wspierane trzeba dodatkowego JS.
+            </aside>
         </section>
 
         <section>
@@ -441,7 +451,32 @@ $portrait: "only screen and (orientation: portrait)";
 
             <h3>Co lepsze? To zależy...</h3>
 
+            <div>
+                <div style="width: 50%; float: left;">
+                    <ul>
+                        <li>Sass</li>
+                        <li>Czytelniejszy</li>
+                        <li>RTL</li>
+                        <li>Łatwiejszy w modyfikacji</li>
+                        <li>Wtyczki JS (np. Interchange)</li>
+                        <li>Komponenty (np. Block Grid)</li>
+                    </ul>
+                </div>
+                <div style="width: 50%; float: right;">
+                    <ul>
+                        <li>IE</li>
+                        <li>Duża społeczność</li>
+                        <li>Dużo gotowych skórek</li>
+                        <li>Lepsza dokumentacja</li>
+                    </ul>
+                </div>
+            </div>
+
             <aside class="notes">
+                Wsparcie IDE.
+
+                <br>
+
                 Jeśli jest czas, to możemy pokazać: interchange, jak się zmienia strona mce, visibility classes na niej,
                 zmianę lejałtu dla speakerów.
             </aside>
@@ -457,6 +492,8 @@ $portrait: "only screen and (orientation: portrait)";
             <h3>Tomasz Netczuk</h3>
 
             <h4><a href="mailto:contact@netczuk.pl">contact@netczuk.pl</a>, <a href="https://twitter.com/netczuk" target="_blank">@netczuk</a></h4>
+
+            <small><a href="https://github.com/neciu/mobilization2013-foundation">Prezentacja na Githubie.</a></small>
         </section>
     </div>
 </div>
